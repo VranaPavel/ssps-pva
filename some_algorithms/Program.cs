@@ -1,5 +1,7 @@
 ﻿using System;
-using System.ComponentModel;
+using System.Runtime.InteropServices;
+using System.Runtime.Intrinsics.X86;
+using System.Security.Cryptography.X509Certificates;
 
 namespace some_algorithms
 {
@@ -75,7 +77,7 @@ namespace some_algorithms
 
 
             // third exercise
-            int[] a3 = {15, 1, 96, 42, 5, -17, 6, 28, 34, 10};
+            int[] a3 = { 15, 1, 96, 42, 5, -17, 6, 28, 34, 10 };
             int min3 = a3[0], max3 = a3[0], diameter3 = 0;
             for (int i = 0; i < a3.Length; i++)
             {
@@ -92,9 +94,9 @@ namespace some_algorithms
 
 
             // fourth exercise
-            int[] a4 = {15, 1, 96, 42, 5, -17, 6, 28, 34, 10};
+            int[] a4 = { 15, 1, 96, 42, 5, -17, 6, 28, 34, 10 };
             int min4 = a4[0], max4 = a4[0], secondMin4 = a4[0], secondMax4 = a4[0], diameter = 0;
-            
+
             for (int i = 0; i < a4.Length; i++)
             {
                 if (a4[i] < min4)
@@ -119,7 +121,7 @@ namespace some_algorithms
                     a4New[j4] = a4[i];
                     diameter += a4New[j4];
                     j4++;
-                }   
+                }
             }
             diameter /= a4New.Length;
             Console.WriteLine("\nSmallest element of array is: {0}", min4);
@@ -127,9 +129,71 @@ namespace some_algorithms
             Console.WriteLine("Second smallest element of array is: {0}", secondMin4);
             Console.WriteLine("Second biggest element of array is: {0}", secondMax4);
             Console.WriteLine("Diameter of array without biggest and smallest element is: {0}", diameter);
-        }
 
-        // fifth exercise
-        
+
+            // fifth exercise
+            int[] a5 = { 45, 12, 36, 84, 2, -65, 97, -93 };
+            for (int i = 0; i < a5.Length - 1; i++)
+            {
+                int x51 = a5[i];
+                int index = i;
+                for (int j = i; j < a5.Length; j++)
+                {
+                    if (x51 < a5[j])
+                    {
+                        x51 = a5[j];
+                        index = j;
+                    }                
+                }
+                int x52 = a5[i];
+                a5[i] = x51;
+                a5[index] = x52;
+            }
+            Console.Write("\nSorted array from biggest is: ");
+            for (int i = 0; i < a5.Length; i++)
+                Console.Write("{0} ", a5[i]);
+
+
+            // sixth exercise
+            Console.Write("Enter word to encrypt: ");
+            string? s6;
+            string s6New = "";
+            do
+            {
+                s6 = Console.ReadLine();
+            } while (s6 == null);
+
+            for (int i = 0; i < s6.Length; i++)
+            {
+                int newChar = s6[i] + 22;
+                if (newChar > 122 || newChar > 90)
+                    newChar -= 25;
+                s6New += Convert.ToChar(newChar);
+            }
+            Console.WriteLine("\n\nEncrypted word is: {0}", s6New);
+            
+
+            // eighth exercise
+            long i8 = 3;
+            bool b8 = true;
+            while (b8)
+            {
+                for (int j = 2; j <= i8; j++)
+                {
+                    string s8 = i8.ToString();
+                    if (i8 % j == 0 && j != i8)
+                    {
+                        break;
+                    }
+                    else if (j == i8 && s8.Contains("777"))
+                    {
+                        Console.WriteLine(i8);
+                        b8 = false;
+                        break;
+                    }
+                }
+                i8++;
+            }
+        }
     }
 }
