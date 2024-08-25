@@ -6,4 +6,6 @@ Exercises from programming (pva) subject on SSPS (Teacher: Ing. Pavel Svec)
 
 - arrays and list: exercise 8
 - loops and statements: exercises 12 and 13
+- some algorithms: exercise 7
+
 - check arrays and list exercise 10 
