@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Runtime.InteropServices;
-using System.Runtime.Intrinsics.X86;
-using System.Security.Cryptography.X509Certificates;
 
 namespace some_algorithms
 {
@@ -133,21 +130,17 @@ namespace some_algorithms
 
             // fifth exercise
             int[] a5 = { 45, 12, 36, 84, 2, -65, 97, -93 };
-            for (int i = 0; i < a5.Length - 1; i++)
+            for (int i = 1; i < a5.Length; i++)
             {
-                int x51 = a5[i];
-                int index = i;
-                for (int j = i; j < a5.Length; j++)
+                for (int j = 0; j < a5.Length - i; j++)
                 {
-                    if (x51 < a5[j])
+                    if (a5[j] > a5[j + 1])
                     {
-                        x51 = a5[j];
-                        index = j;
+                        int swap = a5[j + 1];
+                        a5[j + 1] = a5[j];
+                        a5[j] = swap;
                     }                
                 }
-                int x52 = a5[i];
-                a5[i] = x51;
-                a5[index] = x52;
             }
             Console.Write("\nSorted array from biggest is: ");
             for (int i = 0; i < a5.Length; i++)
@@ -155,7 +148,7 @@ namespace some_algorithms
 
 
             // sixth exercise
-            Console.Write("Enter word to encrypt: ");
+            Console.Write("\nEnter word to encrypt: ");
             string? s6;
             string s6New = "";
             do
