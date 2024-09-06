@@ -203,14 +203,15 @@ namespace Exercises
 
             // tenth exercise
             int[] a10 = {8, 6, 1, 3, 0, 5, 2};
-            for (int i = 0; i < a10.Length; i++)
+            for (int i = 1; i < a10.Length; i++)
             {
-                for (int j = 0; j < a10.Length; j++)
+                for (int j = 0; j < a10.Length - i; j++)
                 {
-                    if (a10[i] > a10[j])
+                    if (a10[j] > a10[j + 1])
                     {
-                        int x = a10[j];
-                        a10[j] = 
+                        int swap = a10[j + 1];
+                        a10[j + 1] = a10[j];
+                        a10[j] = swap;
                     }
                 }
             }
