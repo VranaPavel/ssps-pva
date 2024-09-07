@@ -168,7 +168,7 @@ namespace ClassesExercises
         public static void Main()
         {
             // first exercise
-/*            ClassInformations[] arrOfClasses = new ClassInformations[4];
+            ClassInformations[] arrOfClasses = new ClassInformations[4];
             arrOfClasses[0] = new ClassInformations("1.A", 33, 1.53);
             arrOfClasses[1] = new ClassInformations("1.B", 31, 2.46);
             arrOfClasses[2] = new ClassInformations("1.C", 34, 2.57);
@@ -263,7 +263,7 @@ namespace ClassesExercises
             }
             for (int i = 0; i < planets.Count; i++)
                 planets[i].PrintInformations();
-*/
+
             
             // fourth exercise
             Circle firstCircle = new Circle(1, -1.1, 2.9);
