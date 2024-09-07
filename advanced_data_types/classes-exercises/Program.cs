@@ -1,10 +1,4 @@
 ﻿using System;
-using System.ComponentModel.Design;
-using System.Globalization;
-using System.Net.Mail;
-using System.Net.Security;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.ExceptionServices;
 
 namespace ClassesExercises
 {
