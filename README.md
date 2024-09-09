@@ -10,3 +10,6 @@ Exercises from programming (pva) subject on SSPS (Teacher: Ing. Pavel Svec)
 - methods: exercise 4
 - classes - constructors: exercise 5
 - random numbers - exercise 4
+
+- check exceptions: exercise 5 and 6
+- check structs
